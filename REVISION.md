@@ -2,6 +2,14 @@ Revision history
 ===================
 
 
+v1.1.1 (2017-01-24)
+-------------------
+
+* Adding default options inside class Usage.
+* Main now prints default options and active options.
+* Supports `--silent` and `--verbose`.
+
+
 v1.1.0 (2017-01-24)
 -------------------
 

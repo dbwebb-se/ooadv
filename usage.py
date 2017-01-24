@@ -20,7 +20,7 @@ import getopt
 PROGRAM = os.path.basename(sys.argv[0])
 AUTHOR = "Mikael Roos"
 EMAIL = "mikael.t.h.roos@gmail.com"
-VERSION = "v1.1.0"
+VERSION = "v1.1.1"
 
 MSG_USAGE = """{program} - short description. By {author} ({email}), version {version}.
 
@@ -57,6 +57,18 @@ class Usage():
     """
     Parse CLI options and return as dict. Deal with usage information.
     """
+    default_options = {
+        "verbose": False,
+        "silent": False,
+    }
+
+    options = {}
+
+    def __init__(self):
+        """
+        Initiate.
+        """
+        self.options = self.default_options.copy()
 
     def printUsage(self, exitStatus=0):
         """
@@ -77,11 +89,12 @@ class Usage():
         Parse all command line options and arguments and
         return them as a dictionary.
         """
-        all_options = {}
         try:
             opts, _ = getopt.getopt(sys.argv[1:], "hv", [
                 "help",
                 "version",
+                "silent",
+                "verbose"
             ])
 
             for opt, _ in opts:
@@ -91,9 +104,15 @@ class Usage():
                 elif opt in ("-v", "--version"):
                     self.printVersion()
 
+                elif opt in ("--silent"):
+                    self.options["silent"] = True
+
+                elif opt in ("--verbose"):
+                    self.options["verbose"] = True
+
         except getopt.GetoptError as e:
             print(e)
             print(MSG_HELP)
             sys.exit(EXIT_USAGE)
 
-        return all_options
+        return self.options

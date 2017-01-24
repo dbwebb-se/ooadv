@@ -15,8 +15,13 @@ def main():
     Main function where it all starts.
     """
     usage = Usage()
-    options = usage.parseOptions()
-    print(options)
+    usage.parseOptions()
+
+    print("Default options:")
+    print(usage.default_options)
+
+    print("Active options:")
+    print(usage.options)
 
     sys.exit()
 
