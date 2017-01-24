@@ -2,6 +2,13 @@ Revision history
 ===================
 
 
+v1.3.1 (2017-01-24)
+-------------------
+
+* Usage: Added comments for tests.
+* Usage: Added unittest for --version, -v and --help, -h.
+
+
 v1.3.0 (2017-01-24)
 -------------------
 
