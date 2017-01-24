@@ -36,6 +36,9 @@ class Shell(cmd.Cmd):
         pass
 
     def get_names(self):
+        """
+        Get all names of the class, but not those hidden from help.
+        """
         l1 = dir(self.__class__)
         l2 = self.__hidden_methods
         return [x for x in l1 if x not in l2]

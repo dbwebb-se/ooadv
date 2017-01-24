@@ -2,6 +2,14 @@ Revision history
 ===================
 
 
+v1.2.1 (2017-01-24)
+-------------------
+
+* Shell: Change behaviour for empty lines.
+* Shell: Add ctrl-d as alternative to exit.
+* Adding pythonic `.pylintrc`.
+
+
 v1.2.0 (2017-01-24)
 -------------------
 
