@@ -84,13 +84,14 @@ class Usage():
         print(MSG_VERSION)
         sys.exit()
 
-    def parseOptions(self):
+    def parseOptions(self, argv=None):
         """
         Parse all command line options and arguments and
         return them as a dictionary.
         """
+        argv = argv if not None else sys.argv[1:]
         try:
-            opts, _ = getopt.getopt(sys.argv[1:], "hv", [
+            opts, _ = getopt.getopt(argv, "hv", [
                 "help",
                 "version",
                 "silent",

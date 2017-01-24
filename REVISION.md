@@ -2,6 +2,12 @@ Revision history
 ===================
 
 
+v1.3.0 (2017-01-24)
+-------------------
+
+* Usage: Added unittest for --silent and --verbose.
+
+
 v1.2.1 (2017-01-24)
 -------------------
 
