@@ -32,3 +32,6 @@ class Shell(cmd.Cmd):
         """
         print("Bye bye - see ya soon again")
         return True
+
+    def emptyline(self):
+        pass
