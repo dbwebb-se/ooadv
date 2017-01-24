@@ -7,15 +7,25 @@ Unittest for the usage module.
 import unittest
 from usage import Usage
 
-# pylint: disable=C0111
-
 
 class TestUsageModul(unittest.TestCase):
+    """Test cases"""
 
     def setUp(self):
+        """Setup each testcase"""
         self.usage = Usage()
 
     def test_silent_verbose(self):
+        """
+        --silent
+        --verbose
+        --silent --verbose
+        """
+        options = self.usage.parseOptions("".split())
+        self.assertFalse(options["silent"])
+        self.assertFalse(options["verbose"])
+
+        self.usage.__init__()
         options = self.usage.parseOptions("--silent".split())
         self.assertTrue(options["silent"])
         self.assertFalse(options["verbose"])
@@ -31,6 +41,10 @@ class TestUsageModul(unittest.TestCase):
         self.assertTrue(options["verbose"])
 
     def test_version(self):
+        """
+        -v
+        --version
+        """
         with self.assertRaises(SystemExit):
             self.usage.parseOptions("-v".split())
 
@@ -38,6 +52,10 @@ class TestUsageModul(unittest.TestCase):
             self.usage.parseOptions("--version".split())
 
     def test_help(self):
+        """
+        -h
+        --help
+        """
         with self.assertRaises(SystemExit):
             self.usage.parseOptions("-h".split())
 
