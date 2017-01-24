@@ -15,7 +15,7 @@ class Shell(cmd.Cmd):
     prompt = "(XXX) "
 
     # Do not show in help
-    __hidden_methods = ('do_EOF',)
+    _hidden_methods = ('do_EOF',)
 
     def do_hi(self, _):
         """
@@ -40,7 +40,7 @@ class Shell(cmd.Cmd):
         Get all names of the class, but not those hidden from help.
         """
         l1 = dir(self.__class__)
-        l2 = self.__hidden_methods
+        l2 = self._hidden_methods
         return [x for x in l1 if x not in l2]
 
     def do_exit(self, _):
