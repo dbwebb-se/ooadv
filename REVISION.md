@@ -1,6 +1,16 @@
 Revision history
 ===================
 
+TODO
+-------------------
+
+* Add testcases for module shell.
+* Add Makefile for make test.
+* Add settings for virtualenv (add support to Makefile).
+* Add code coverage.
+* Add automatic build/tests with Travis and CircleCI.
+* Add pep8 and pylint as test/validation tools.
+
 
 v1.3.1 (2017-01-24)
 -------------------
