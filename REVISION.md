@@ -2,6 +2,12 @@ Revision history
 ===================
 
 
+v1.2.0 (2017-01-24)
+-------------------
+
+* Adding a shell for interactive usage, adding sample commands to make it work.
+
+
 v1.1.1 (2017-01-24)
 -------------------
 

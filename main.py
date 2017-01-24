@@ -8,6 +8,7 @@ See usage.py for details how to use program.
 
 import sys
 from usage import Usage
+from shell import Shell
 
 
 def main():
@@ -22,6 +23,9 @@ def main():
 
     print("Active options:")
     print(usage.options)
+    print()
+
+    Shell().cmdloop()
 
     sys.exit()
 
