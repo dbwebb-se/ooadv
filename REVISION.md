@@ -5,11 +5,20 @@ TODO
 -------------------
 
 * Add testcases for module shell.
-* Add Makefile for make test.
 * Add settings for virtualenv (add support to Makefile).
-* Add code coverage.
-* Add automatic build/tests with Travis and CircleCI.
+* Add automatic build/tests with Travis, CircleCI, coveralls.
+
+
+v1.3.2 (2017-01-31)
+-------------------
+
+* Move tests to directory `tests/`
+* Adding Makefile to run all tests.
+* Adding file `requirements.txt` for pip installs.
+* Makefile for `make install` and `make check`.
+* Add coverage and `make coverage`.
 * Add pep8 and pylint as test/validation tools.
+* Add `make doc` for api-documentation and uml.
 
 
 v1.3.1 (2017-01-24)
