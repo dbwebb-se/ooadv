@@ -14,7 +14,7 @@ v1.3.2 (2017-01-31)
 
 * Move tests to directory `tests/`
 * Adding Makefile to run all tests.
-* Adding file `requirements.txt` for pip installs.
+* Adding file `.requirements.txt` for pip installs.
 * Makefile for `make install` and `make check`.
 * Add coverage and `make coverage`.
 * Add pep8 and pylint as test/validation tools.
