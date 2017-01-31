@@ -20,7 +20,7 @@ import getopt
 PROGRAM = os.path.basename(sys.argv[0])
 AUTHOR = "Mikael Roos"
 EMAIL = "mikael.t.h.roos@gmail.com"
-VERSION = "v1.1.1"
+VERSION = "v1.3.2 (2017-01-31)"
 
 MSG_USAGE = """{program} - short description. By {author} ({email}), version {version}.
 
@@ -37,10 +37,7 @@ Options:
     version=VERSION
 )
 
-MSG_VERSION = "{program} version {version}.".format(
-    program=PROGRAM,
-    version=VERSION
-)
+MSG_VERSION = "{version}.".format(version=VERSION)
 
 MSG_HELP = "Use {program} --help to get usage.".format(program=PROGRAM)
 
@@ -89,7 +86,7 @@ class Usage():
         Parse all command line options and arguments and
         return them as a dictionary.
         """
-        argv = argv if not None else sys.argv[1:]
+        argv = argv if argv is not None else sys.argv[1:]
         try:
             opts, _ = getopt.getopt(argv, "hv", [
                 "help",
