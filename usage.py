@@ -22,7 +22,8 @@ AUTHOR = "Mikael Roos"
 EMAIL = "mikael.t.h.roos@gmail.com"
 VERSION = "v1.3.2 (2017-01-31)"
 
-MSG_USAGE = """{program} - short description. By {author} ({email}), version {version}.
+MSG_USAGE = """{program} - short description. \
+By {author} ({email}), version {version}.
 
 Usage:
   {program} [options] name
@@ -52,8 +53,13 @@ EXIT_FAILED = 2
 
 class Usage():
     """
-    Parse CLI options and return as dict. Deal with usage information.
+    Parse CLI options and return as dict.
+
+    Present usage and version information.
     """
+
+    # pylint: disable=R0201
+
     default_options = {
         "verbose": False,
         "silent": False,
@@ -62,29 +68,24 @@ class Usage():
     options = {}
 
     def __init__(self):
-        """
-        Initiate.
-        """
+        """Initiate."""
         self.options = self.default_options.copy()
 
-    def printUsage(self, exitStatus=0):
-        """
-        Print usage information about the script and exit.
-        """
+    def print_usage(self, exit_status=0):
+        """Print usage information about the script and exit."""
         print(MSG_USAGE)
-        sys.exit(exitStatus)
+        sys.exit(exit_status)
 
-    def printVersion(self):
-        """
-        Print version information and exit.
-        """
+    def print_version(self):
+        """Print version information and exit."""
         print(MSG_VERSION)
         sys.exit()
 
-    def parseOptions(self, argv=None):
+    def parse_options(self, argv=None):
         """
-        Parse all command line options and arguments and
-        return them as a dictionary.
+        Parse all command line options and arguments.
+
+        Return them as a dictionary.
         """
         argv = argv if argv is not None else sys.argv[1:]
         try:
@@ -97,19 +98,19 @@ class Usage():
 
             for opt, _ in opts:
                 if opt in ("-h", "--help"):
-                    self.printUsage()
+                    self.print_usage()
 
                 elif opt in ("-v", "--version"):
-                    self.printVersion()
+                    self.print_version()
 
-                elif opt in ("--silent"):
+                elif opt in "--silent":
                     self.options["silent"] = True
 
-                elif opt in ("--verbose"):
+                elif opt in "--verbose":
                     self.options["verbose"] = True
 
-        except getopt.GetoptError as e:
-            print(e)
+        except getopt.GetoptError as err:
+            print(err)
             print(MSG_HELP)
             sys.exit(EXIT_USAGE)
 

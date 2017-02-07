@@ -55,7 +55,7 @@ clean:
 
 # target: test                - Run all tests.
 .PHONY: test
-test: pylint pep8 unittest doctest coverage
+test: pylint pycodestyle flake8 unittest doctest coverage
 	@$(call HELPTEXT,$@)
 
 
@@ -87,12 +87,21 @@ coverage:
 
 
 
-# target: pep8                - Run pep8 validation.
-.PHONY: pep8
-pep8:
+# target: pycodestyle         - Run pycodestyle validation.
+.PHONY: pycodestyle
+pycodestyle:
 	@$(call HELPTEXT,$@)
-	@install -d build/pep8
-	-pep8 --exclude=orig --count --statistics . | tee build/pep8/log.txt
+	@install -d build/pycodestyle
+	-pycodestyle --exclude=orig --count --statistics . | tee build/pycodestyle/log.txt
+
+
+
+# target: flake8              - Run flake8 validation.
+.PHONY: flake8
+flake8:
+	@$(call HELPTEXT,$@)
+	@install -d build/flake8
+	-flake8 --exclude=orig --count --statistics . | tee build/flake8/log.txt
 
 
 
@@ -173,4 +182,5 @@ check:
 	@$(ECHO) "\n$(INFO_COLOR)pip:$(NO_COLOR)" && python3 -m pip --version
 	@$(ECHO) "\n$(INFO_COLOR)pylint:$(NO_COLOR)" && which pylint && pylint --version
 	@$(ECHO) "\n$(INFO_COLOR)coverage:$(NO_COLOR)" && which coverage && coverage --version
-	@$(ECHO) "\n$(INFO_COLOR)pep8:$(NO_COLOR)" && which pep8 && pep8 --version
+	@$(ECHO) "\n$(INFO_COLOR)flake8:$(NO_COLOR)" && which flake8 && flake8 --version
+	@$(ECHO) "\n$(INFO_COLOR)pycodestyle:$(NO_COLOR)" && which pycodestyle && pycodestyle --version

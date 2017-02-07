@@ -9,6 +9,13 @@ TODO
 * Add automatic build/tests with Travis, CircleCI, coveralls.
 
 
+v1.3.2* (2017-02-07)
+-------------------
+
+* Added validators flake8, flake8-docstrings, pycodestyle.
+* Removed pep8 validator.
+
+
 v1.3.2 (2017-01-31)
 -------------------
 

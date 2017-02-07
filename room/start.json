@@ -1,0 +1,16 @@
+{
+    "graphics": [
+        {
+            "graphic": "base.txt",
+            "posX": 0,
+            "posY": 0
+        },
+        {
+            "graphic": "cat1.txt",
+            "posX": 10,
+            "posY": 10
+        }
+    ],
+    "description": "Du står på parkeringsplatsen framför BTH.",
+    "view": "Det finns parkerade bilar och en väg som leder norrut till något som liknar en badtunna i trä."
+}
