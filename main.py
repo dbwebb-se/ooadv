@@ -12,20 +12,19 @@ from shell import Shell
 
 
 def main():
-    """
-    Main function where it all starts.
-    """
+    """Main function where it all starts."""
     usage = Usage()
-    usage.parseOptions()
+    usage.parse_options()
 
-    print("Default options:")
-    print(usage.default_options)
+    # print("Default options:")
+    # print(usage.default_options)
+    #
+    # print("Active options:")
+    # print(usage.options)
+    # print()
 
-    print("Active options:")
-    print(usage.options)
-    print()
-
-    Shell().cmdloop()
+    shell = Shell()
+    shell.cmdloop()
 
     sys.exit()
 
