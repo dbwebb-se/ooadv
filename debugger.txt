@@ -1,5 +1,9 @@
 # Idea
-1. 
+1. ./main.py
+2. python3 graphics.py
+3. Review doc for api and uml
+
+
 
 # Create a test method in the module
 def test():
