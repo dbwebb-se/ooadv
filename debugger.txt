@@ -1,7 +1,20 @@
 # Idea
+0. Use v1.4.2
 1. ./main.py
 2. python3 graphics.py
 3. Review doc for api and uml
+4. Explain the idea on graphics
+
+0. Use v1.4.3
+1. Add test method
+2. Run in debugger
+3. Walk around in the debugger, play around, check docs
+4. breakpoints, print values, pp, evaluate when b
+5. make it work, move it around
+
+0. Make a main using the testfunction.
+1. Add two more asciis.
+
 
 
 
@@ -78,3 +91,46 @@ pdb.run("graphics.test()")
 (Pdb) self.canvas[0+py][0:px] + content[0][:] + self.canvas[0+py][px+len(content[0]):]
 '|               /\\_/\\                                                        |'
 (Pdb)
+
+
+
+#
+def test():
+    print("hej")
+    
+    g = Graphics([
+        {
+            "graphic": "base.txt",
+            "posX": 0,
+            "posY": 0
+        },
+        {
+            "graphic": "tree.txt",
+            "posX": 1,
+            "posY": 1
+        },
+        {
+            "graphic": "cat1.txt",
+            "posX": 20,
+            "posY": 8
+        },
+        {
+            "graphic": "alien.txt",
+            "posX": 50,
+            "posY": 5
+        }
+    ])
+
+    print(g)
+
+
+if __name__ == "__main__":
+    test()
+
+
+# Solution
+    # c_len = len(content[i])
+    # part_a = self.canvas[i + py][0:px]
+    # part_b = content[i][:]
+    # part_c = self.canvas[i + py][px + c_len:]
+    # self.canvas[i + py] = part_a + part_b + part_c
