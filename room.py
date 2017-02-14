@@ -41,5 +41,4 @@ class Room():
 
     def __str__(self):
         """Print a view of the room."""
-        print(self.graphics)
-        return self.graphics + "\n" + self.data["description"] + "\n"
+        return str(self.graphics) + "\n" + self.data["description"] + "\n"

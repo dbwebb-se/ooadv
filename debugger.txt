@@ -1,0 +1,76 @@
+# Idea
+1. 
+
+# Create a test method in the module
+def test():
+    print("hej")
+    
+    g = Graphics([
+        {
+            "graphic": "base.txt",
+            "posX": 0,
+            "posY": 0
+        },
+        {
+            "graphic": "cat1.txt",
+            "posX": 10,
+            "posY": 10
+        }
+    ])
+
+    print(g)
+
+
+
+# Get going
+import pdb
+import graphics
+pdb.run("graphics.test()")
+
+
+
+# Check details of a matrix
+(Pdb) len(content)
+20
+(Pdb) [len(i) for i in content]
+[77, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 77]
+
+
+
+# Pretty print
+(Pdb) pp content    
+['      /\\_/\\',   
+ ' /\\  / o o \\',  
+ '//\\\\ \\~(*)~/', 
+ '`  \\/   ^ /',    
+ '  | \\|| ||',     
+ "  \\ '|| ||",     
+ '   \\)()-())']    
+(Pdb)               
+
+
+
+# Print variabels
+(Pdb) p_len, px, py
+(7, 10, 10)
+
+
+
+# Overlap strings
+(Pdb) i
+0
+(Pdb) content[0]
+'      /\\_/\\'
+(Pdb) self.canvas[i]
+' ----------------------------------------------------------------------------'
+(Pdb) self.canvas[0]
+' ----------------------------------------------------------------------------'
+(Pdb) self.canvas[0][0:12]
+' -----------'
+(Pdb) self.canvas[0+py][0:12]
+'|           '
+(Pdb) self.canvas[0+py][0:px] + content[0][:]
+'|               /\\_/\\'
+(Pdb) self.canvas[0+py][0:px] + content[0][:] + self.canvas[0+py][px+len(content[0]):]
+'|               /\\_/\\                                                        |'
+(Pdb)

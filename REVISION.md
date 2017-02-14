@@ -9,6 +9,12 @@ TODO
 * Add automatic build/tests with Travis, CircleCI, coveralls.
 
 
+v1.4.1 (2017-02-14)
+-------------------
+
+* Made graphics overlay work.
+
+
 v1.4.0 (2017-02-14)
 -------------------
 
