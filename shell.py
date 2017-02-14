@@ -7,6 +7,8 @@ Some methods hidden from menu.
 """
 
 import cmd
+from game import Game
+from room import Room
 
 
 class Shell(cmd.Cmd):
@@ -21,6 +23,19 @@ class Shell(cmd.Cmd):
     _hidden_methods = ('do_EOF',)
 
     # pylint: disable=no-self-use
+
+    def inject(self, game):
+        """The game to work with."""
+        self.game = game
+
+    def do_init(self, _):
+        """Init the game."""
+        pass
+
+    def do_start(self, _):
+        """Start the game by moving into the first room."""
+        room = Room("start")
+        print(room)
 
     def do_hi(self, _):
         """Say hi.

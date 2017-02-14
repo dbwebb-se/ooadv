@@ -9,6 +9,12 @@ TODO
 * Add automatic build/tests with Travis, CircleCI, coveralls.
 
 
+v1.4.0 (2017-02-14)
+-------------------
+
+* Adding game, room and graphics, not working.
+
+
 v1.3.3 (2017-02-07)
 -------------------
 

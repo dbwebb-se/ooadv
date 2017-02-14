@@ -9,6 +9,7 @@ See usage.py for details how to use program.
 import sys
 from usage import Usage
 from shell import Shell
+from game import Game
 
 
 def main():
@@ -24,6 +25,10 @@ def main():
     # print()
 
     shell = Shell()
+    game = Game()
+
+    shell = Shell()
+    shell.inject(game)
     shell.cmdloop()
 
     sys.exit()
