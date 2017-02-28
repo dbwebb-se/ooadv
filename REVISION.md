@@ -9,6 +9,12 @@ TODO
 * Add automatic build/tests with Travis, CircleCI, coveralls.
 
 
+v1.4.4 (2017-02-28)
+-------------------
+
+* Made it work again.
+
+
 v1.4.3 (2017-02-14)
 -------------------
 

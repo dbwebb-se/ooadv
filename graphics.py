@@ -39,7 +39,11 @@ class Graphics():
         px = part["posX"]
 
         for i in range(p_len):
-            self.canvas[i] += content[i]
+            c_len = len(content[i])
+            part_a = self.canvas[i + py][0:px]
+            part_b = content[i][:]
+            part_c = self.canvas[i + py][px + c_len:]
+            self.canvas[i + py] = part_a + part_b + part_c
 
     def __str__(self):
         """Print a view of the room."""
@@ -48,3 +52,36 @@ class Graphics():
             str1 += "".join(row) + "\n"
 
         return str1
+
+
+def test():
+    print("hej")
+    
+    g = Graphics([
+        {
+            "graphic": "base.txt",
+            "posX": 0,
+            "posY": 0
+        },
+        {
+            "graphic": "tree.txt",
+            "posX": 1,
+            "posY": 1
+        },
+        {
+            "graphic": "cat1.txt",
+            "posX": 20,
+            "posY": 8
+        },
+        {
+            "graphic": "alien.txt",
+            "posX": 50,
+            "posY": 5
+        }
+    ])
+
+    print(g)
+
+
+if __name__ == "__main__":
+    test()
